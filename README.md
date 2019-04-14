@@ -103,8 +103,9 @@ for result in research_divs:
 
 ### ClinicalTrials.gov:
 1. Using requests and beautiful soup we pulled data using ct.gov URL by nctID.
-2. Appended site name, recruiting status, city, and zip to dictionary Loaded records into a json.
-3. Using a for loop records were inserted row by row into MongoDB.
+2. Appended site name, recruiting status, city, and zip to dictionary. 
+3. Loaded records into a json.
+4. Using a for loop records were inserted row by row into MongoDB.
 
 #### Code snippet for extraction process:
 Bellow is a code snippet of the function used to extract from ClinicalTrials.gov:
