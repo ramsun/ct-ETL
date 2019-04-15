@@ -22,9 +22,9 @@ Perform ETL process on location data from clinicaltrials.gov and bmsstudyconnect
 
 ## Database Considerations:
 We decided to use MongoDB (non-relational) as our database of choice over MySQL (relational).  This is for the following reasons:
-1. It is easier to warehouse data that will be growing over time in a NoSQL database, since there is no need to change the schema with the introduction of new data. 
-2. A nested json structure will be easier to query for as we continue to collect location data for different research tags from different websites.
-3. We are not forced to store the data we collect symmetrically.  This is useful since not all websites will have the same amount of data available on it, which further reduces data warehousing maintenance.
+1. With the removal or addition of new or existing columns (frequent schema changes), MongoDB is the better choice in terms of warehouse maintenance.
+2. A nested json structure is used to store data in a one-to-many relationship in MongoDB, which is easier to work with without RDBMS expertise.
+3. There is no need for multiple transactions for this particular set of data, and with the amount of data potentially growing exponentially over time, MongoDB is the better choice for horizontal scaling.
 
 ### ClinicalTrials.gov and BMS Study Connect mongo Shell output:
 ![Database Ouput](readme_assets/collection.png)
