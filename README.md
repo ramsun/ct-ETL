@@ -14,7 +14,7 @@ Perform ETL process on location data from clinicaltrials.gov and bmsstudyconnect
 - Trial ID (research tag)
 
 ## Tools Used
-- Jupyter Notebook (Python IDE)
+- Jupyter Notebook (IDE)
 - BeautifulSoup (HTML parser)
 - PyMongo (MongoDB ORM)
 - chromedriver.exe (Driver for asynchronous parsing)
@@ -34,8 +34,9 @@ We decided to use MongoDB (non-relational) as our database of choice over MySQL 
 ### BMS Study connect:
 1. Using chromedriver, Selenium, and BeautifulSoup the html was scraped from the page source.
 2. Time delay was needed because the page load was slow.
-3. Class definition for scraping was determined and then span was used to find the trial id
-4. Collected trial id, location, & recruiting status- had to replace “\n” and “ ” characters. and appended into MongoDB
+3. Class definition for scraping was determined and then span was used to find the trial id.
+4. Collected trial id, location, & recruiting status- had to replace “\n” and “ ” characters.
+5. Insert into MongoDB collection.
 
 #### Code snippet for asynchronous HTML scraping:
 ```python
